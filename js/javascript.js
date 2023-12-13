@@ -217,7 +217,7 @@ function reiniciarJogo(){
 	}
 }
 function gameLoop(){
-	window.onload = function(){
+	setTimeout(() =>{
 		atualizaQuadro();
 		desenhaFundo();
 		desenhaChao();
@@ -233,7 +233,7 @@ function gameLoop(){
 		}
 		
 		jogo.pause = requestAnimationFrame(gameLoop);
-	}
+	}, 1000)
 }
 
 function iniciar(){
