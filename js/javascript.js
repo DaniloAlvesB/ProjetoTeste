@@ -217,23 +217,21 @@ function reiniciarJogo(){
 	}
 }
 function gameLoop(){
-	setTimeout(() =>{
-		atualizaQuadro();
-		desenhaFundo();
-		desenhaChao();
-		desenhaPlacar();
-		atualizaChao();
-		if(jogo.vida > 0){
-			desenhaVilao();
-			desenhaHeroi();
-			atualizaHeroi();
-			atualizaVilao();
-		}else{
-			desenhaRecord();
-		}
-		
-		jogo.pause = requestAnimationFrame(gameLoop);
-	}, 1000)
+	atualizaQuadro();
+	desenhaFundo();
+	desenhaChao();
+	desenhaPlacar();
+	atualizaChao();
+	if(jogo.vida > 0){
+		desenhaVilao();
+		desenhaHeroi();
+		atualizaHeroi();
+		atualizaVilao();
+	}else{
+		desenhaRecord();
+	}
+	
+	jogo.pause = requestAnimationFrame(gameLoop);
 }
 
 function iniciar(){
@@ -273,7 +271,9 @@ function iniciar(){
 		$("#inicio").hide();
 		$("#capa").hide();
 		musica.play();
-		gameLoop();
+		setTimeout(() =>{
+			gameLoop();
+		}, 500);
 	});
 	img = new Image();
 	img.src = "imagens/2_spritesheet.png";
