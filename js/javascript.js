@@ -129,6 +129,8 @@ function atualizaChao(){
 	angulo += rotacao;
 }
 function desenhaFundo(){
+	canvas = document.getElementById("meuCanvas");
+	contexto = canvas.getContext("2d");
 	contexto.drawImage(img, 626, 0, fundo.larg, fundo.alt, fundo.x, 0, fundo.larg, fundo.alt);
 	contexto.drawImage(img, 626, 0, fundo.larg, fundo.alt, fundo.x1, 0, fundo.larg, fundo.alt);
 	contexto.drawImage(img, 625, 611, satelite.larg, satelite.alt, satelite.x, 120, satelite.larg, satelite.alt);
