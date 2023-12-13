@@ -217,21 +217,23 @@ function reiniciarJogo(){
 	}
 }
 function gameLoop(){
-	atualizaQuadro();
-	desenhaFundo();
-	desenhaChao();
-	desenhaPlacar();
-	atualizaChao();
-	if(jogo.vida > 0){
-		desenhaVilao();
-		desenhaHeroi();
-		atualizaHeroi();
-		atualizaVilao();
-	}else{
-		desenhaRecord();
+	window.onload = function(){
+		atualizaQuadro();
+		desenhaFundo();
+		desenhaChao();
+		desenhaPlacar();
+		atualizaChao();
+		if(jogo.vida > 0){
+			desenhaVilao();
+			desenhaHeroi();
+			atualizaHeroi();
+			atualizaVilao();
+		}else{
+			desenhaRecord();
+		}
+		
+		jogo.pause = requestAnimationFrame(gameLoop);
 	}
-	
-	jogo.pause = requestAnimationFrame(gameLoop);
 }
 
 function iniciar(){
