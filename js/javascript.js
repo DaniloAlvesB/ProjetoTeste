@@ -276,7 +276,7 @@ function iniciar(){
 		gameLoop();
 	});
 	img = new Image();
-	img.src = "Imagens/2_spritesheet.png";
+	img.src = "imagens/2_spritesheet.png";
 	centroX = canvas.width / 2;
 	centroY = canvas.height + chao.raio / 2;
 	chao.x = chao.larg / 2;
